@@ -10,3 +10,5 @@
 
 ## Пример работы
 [Смотреть видео](https://drive.google.com/file/d/16In2_GXoZ9vl_81HWIg0AxnoBB1a3bOm/view?usp=sharing)
+![Календарь](./src/images/example.png)
+![Статистика кубка](./src/images/exampleSec.png)
