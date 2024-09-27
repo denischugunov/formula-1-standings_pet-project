@@ -1,0 +1,16 @@
+@import url("./header_name.css");
+@import url("./header_nav.css");
+@import url("./header_logo.css");
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 10% 1fr;
+  align-items: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 900px) {
+  .header {
+    grid-template-columns: 1fr 30%;
+  }
+}

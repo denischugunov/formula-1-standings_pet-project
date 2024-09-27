@@ -1,0 +1,37 @@
+@import url("./module/module.css");
+@import url("./schedule_table.css");
+
+.shedule {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  gap: 10px;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "schedule_name schedule_name"
+    "schedule_table next_race_data"
+    "schedule_table result";
+  margin-bottom: 20px;
+}
+
+.schedule_name {
+  grid-area: schedule_name;
+}
+
+.schedule_table {
+  grid-area: schedule_table;
+}
+
+.next_race_data {
+  grid-area: next_race_data;
+}
+
+.result {
+  grid-area: result;
+}
+
+@media (max-width: 900px) {
+  .shedule {
+    display: flex;
+    flex-direction: column;
+  }
+}

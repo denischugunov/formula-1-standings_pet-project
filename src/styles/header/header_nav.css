@@ -1,0 +1,42 @@
+.header_nav {
+  justify-self: end;
+  display: flex;
+  gap: 10px;
+}
+
+.header_nav_list {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.header_nav_list a {
+  border-bottom: 1px solid var(--accent-color, rgb(16, 157, 1));
+}
+
+.header_nav_list a:hover {
+  color: var(--accent-color, rgb(16, 157, 1));
+}
+
+.header_burger_menu_btn {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .header_burger_menu_btn {
+    display: block;
+  }
+
+  .header_nav_list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    top: 50px;
+    right: 30px;
+  }
+
+  .active {
+    display: flex;
+  }
+}

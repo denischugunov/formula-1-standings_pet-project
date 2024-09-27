@@ -1,0 +1,6 @@
+.header_name {
+  font-family: var(--accent-font-family, sans-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent-color, rgb(16, 157, 1));
+}

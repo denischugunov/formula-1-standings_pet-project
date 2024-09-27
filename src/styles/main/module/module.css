@@ -1,0 +1,50 @@
+.module {
+  border: 2px solid var(--accent-color, rgb(16, 157, 1));
+  border-radius: 10px;
+  gap: 5px;
+  padding: 20px;
+}
+
+.next_race_data,
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--accent-font-family, "PressStart2P-Regular");
+  line-height: 1.3;
+  text-align: center;
+  position: relative;
+}
+
+.next_race_data::after,
+.result::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.next_race_data::after {
+  background-image: url("../../../images/background_time_next_race.png");
+}
+
+.result::after {
+  background-image: url("../../../images/background_winners.png");
+}
+
+.result .result_image {
+  border-radius: 100%;
+  inline-size: 60%;
+  margin-bottom: 10px;
+}
+
+.result_winners_list_name {
+  color: var(--accent-color, rgb(16, 157, 1));
+}

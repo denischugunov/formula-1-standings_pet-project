@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "PressStart2P-Regular";
+    src: url("../../fonts/PressStart2P-Regular.ttf") format("truetype"),
+      url("../../fonts/PressStart2P-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "PTSans-Regular";
+    src: url("../../fonts/PTSans-Regular.ttf") format("truetype"),
+      url("../../fonts/PTSans-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }

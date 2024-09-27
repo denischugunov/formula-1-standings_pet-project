@@ -1,0 +1,10 @@
+@import url("./vendor/fonts.css");
+@import url("./global.css");
+@import url("./header/header.css");
+@import url("./main/main.css");
+@import url("./footer/footer.css");
+
+:root {
+  --accent-color: rgb(16, 157, 1);
+  --accent-font-family: "PressStart2P-Regular";
+}

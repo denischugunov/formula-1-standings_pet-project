@@ -3,47 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script
-      type="text/javascript"
-      src="https://vk.com/js/api/openapi.js?168"
-    ></script>
-    <title>Document</title>
+    <link
+      rel="icon"
+      href="<%=require('./images/favicon.png')%>"
+      type="image/x-icon"
+    />
+    <title>F-1 Standings</title>
   </head>
-  <body>
-    <table class="schedule-table">
-      <thead>
-        <tr>
-          <th>Раунд</th>
-          <th>Гран-при</th>
-          <th>Дата</th>
-          <th>Итоги</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Данные будут добавляться здесь сс помощью API-->
-      </tbody>
-    </table>
-    <!-- Виджет для отображения новостей группы "Гаснут огни" -->
-    <div id="vk_groups"></div>
-    <script type="text/javascript">
-      VK.Widgets.Group(
-        "vk_groups",
-        {
-          mode: 4,
-          no_cover: 1,
-          wide: 1,
-          height: 400,
-          color1: "FFFFFF",
-          color2: "000000",
-          color3: "5181B8",
-        },
-        211154316
-      );
-    </script>
-    <div style="width: 800px"><canvas id="lineChartStandings"></canvas></div>
-    <script type="module" src="lineChartStandings.js"></script>
+  <body class="page">
+    <header class="header">
+      <h1>
+        <a
+          class="header_name"
+          href="#"
+          title="Перейти на главную страницу сайта"
+          >F-1 Standings</a
+        >
+      </h1>
+      <img
+        class="header_logo"
+        src="<%=require('./images/logo.svg')%>"
+        alt="Логотип в виде светофора"
+      />
+      <div class="header_nav">
+        <button class="header_burger_menu_btn">☰</button>
+        <nav class="header_nav_list">
+          <a
+            class="header_nav_shedule"
+            href="#shedule"
+            title="Перейти к расписанию"
+            >Расписание</a
+          >
+          <a
+            class="header_nav_driver_standings"
+            href="#standings_driver"
+            title="Перейти к личному зачету"
+            >Личный зачет</a
+          >
+          <a
+            class="header_nav_constructor_standings"
+            href="#standings_constructor"
+            title="Перейти к кубку конструкторов"
+            >Кубок конструкторов</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main class="content">
+      <section class="shedule" id="shedule">
+        <h2 class="section_name schedule_name">Календарь</h2>
+        <table class="schedule_table">
+          <thead>
+            <tr>
+              <th>Раунд</th>
+              <th>Гран-при</th>
+              <th>Дата</th>
+              <th>Итоги</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Данные будут добавляться здесь сс помощью API-->
+          </tbody>
+        </table>
+        <!-- Окно для отображения времени до следующей гонки -->
+        <div class="module next_race_data">
+          <span class="next_race_data_name">Следующий Гран-при</span>
+          <span class="next_race_data_time">Осталось</span>
+        </div>
+        <!-- Окно для отображения результатов последней гонки -->
+        <div class="module result">
+          <img class="result_image" src="" alt="победитель" />
+          <span class="result_grand_prix_name">gran-prix name</span>
+          <span class="result_winners_list_name">На подиуме</span>
+          <ol class="result_winners_list">
+            <li class="result_first_place">racer, team, time</li>
+            <li class="result_sec_place">racer, team, time</li>
+            <li class="result_third_place">racer, team, time</li>
+          </ol>
+        </div>
+      </section>
+      <section class="standings">
+        <div class="standings_driver" id="standings_driver">
+          <h2 class="section_name">Кубок пилотов</h2>
+          <canvas id="driverStandingsChart"></canvas>
+        </div>
+        <div class="standings_constructor" id="standings_constructor">
+          <h2 class="section_name">Кубок конструкторов</h2>
+          <canvas id="constructorStandingsChart"></canvas>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <span class="footer_author">Автор: Чугунов Денис</span>
+      <a class="footer_mail" href="mailto:denis.chugunov98@gmail.com"
+        >Написать мне</a
+      >
+    </footer>
+    <!-- Попап для отображения результатов выбранной гонки -->
+    <div class="res_popup_wrapper">
+      <div class="module res_popup">
+        <div class="res_popup_close_btn">×</div>
+        <img class="res_popup_image" src="" alt="победитель" />
+        <span class="res_popup_grand_prix_name">gran-prix name</span>
+        <span class="res_popup_winners_list_name">На подиуме</span>
+        <ol class="res_popup_winners_list">
+          <li class="res_popup_first_place">racer, team, time</li>
+          <li class="res_popup_sec_place">racer, team, time</li>
+          <li class="res_popup_third_place">racer, team, time</li>
+        </ol>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
-
-<!-- <img src="<%=require('./images/image.png')%>" alt="Логотип">  -->

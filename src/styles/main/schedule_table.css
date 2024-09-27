@@ -1,0 +1,31 @@
+.schedule_table {
+  border: 2px solid var(--accent-color, rgb(16, 157, 1));
+  border-radius: 10px;
+  position: relative;
+}
+
+.schedule_table::after {
+  background-image: url("../../images/background_shedule.png");
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.schedule_table a.active {
+  color: var(--accent-color, rgb(16, 157, 1));
+  border-bottom: 1px solid inherit;
+  cursor: pointer;
+}
+
+.schedule_table th,
+.schedule_table td {
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
